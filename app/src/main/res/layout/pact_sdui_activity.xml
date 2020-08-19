@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".sdui.PactSDUIActivity"
+    android:paddingLeft="32dp"
+    android:paddingRight="32dp">
+
+    <ImageView
+        android:id="@+id/mLogoView"
+        android:layout_width="200dp"
+        android:layout_height="72dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="72dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/pact_logo_big" />
+
+    <EditText
+        android:id="@+id/mUrlView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:padding="5dp"
+        android:lineSpacingExtra="5dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mLogoView"
+        android:hint="Please input json url"
+        android:textColorHint="@color/color_999999"
+        android:textSize="18sp"
+        android:text="https://raw.githubusercontent.com/Muran-Hu/SDUI/master/Custom_Screen"/>
+
+    <TextView
+        android:id="@+id/mPreviewBtn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="34dp"
+        android:background="@drawable/shape_gradient_solid_11a665_20dp"
+        android:gravity="center"
+        android:text="Preview"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/mUrlView"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
