@@ -1,5 +1,6 @@
 package com.example.jetpackcompose.sdui
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import android.widget.EditText
@@ -8,12 +9,11 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.jetpackcompose.R
 import com.google.gson.Gson
-import kotlinx.android.synthetic.main.pact_sdui_activity.*
 import okhttp3.*
 import java.io.IOException
 import java.util.concurrent.TimeUnit
 
-class PactSDUIActivity : AppCompatActivity() {
+class PactActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,11 +35,6 @@ class PactSDUIActivity : AppCompatActivity() {
     private val TIMEOUT_WRITE = 120
     private val TIMEOUT_READ = 120
 
-    /**
-     * Get available states configuration info
-     *
-     * @param url - Configuration file url
-     */
     private fun getJson(url: String) {
         val client: OkHttpClient = OkHttpClient.Builder()
             .connectTimeout(TIMEOUT_CONNECTION.toLong(), TimeUnit.SECONDS)
@@ -62,7 +57,12 @@ class PactSDUIActivity : AppCompatActivity() {
                     try {
                         val res = response.body()!!.string()
                         val sduiBean = Gson().fromJson(res, SDUIBean::class.java)
+
                         println(sduiBean.name + " / " + sduiBean.componentGroups.size)
+
+                        val intent = Intent(this@PactActivity, PactSDUIScreenActivity::class.java)
+                        intent.putExtra(Constants.SDUI_BEAN, sduiBean)
+                        startActivity(intent)
                     } catch (e: Exception) {
                         e.printStackTrace()
                     }

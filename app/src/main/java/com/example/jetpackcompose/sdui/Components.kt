@@ -16,29 +16,29 @@ import androidx.compose.ui.unit.sp
 import androidx.ui.tooling.preview.Preview
 
 @Composable
-fun IconAndTextCta() {
+fun SDUI_IconAndTextCta(iconAndTextCta: IconAndTextCta) {
 
 }
 
 @Composable
-fun PrimaryCtaSlider() {
+fun SDUI_PrimaryCtaSlider(primaryCtaSlider: PrimaryCtaSlider) {
 
 }
 
 @Composable
-fun SummaryEditCell() {
+fun SDUI_SummaryEditCell(summaryEditCell: SummaryEditCell) {
 
 }
 
 @Composable
-fun SingleSelect() {
+fun SDUI_SingleSelect(singleSelect: SingleSelect) {
 
 }
 
 @Composable
-fun H1(displayText:String) {
+fun SDUI_H1(h1: H1) {
     SDUICustomStyledText(
-        displayText = displayText,
+        displayText = h1.parameterTypes?.text?.description.toString(),
         style = TextStyle(
             color = PactColor.H1,
             fontSize = PactDimens.H1,
@@ -48,9 +48,9 @@ fun H1(displayText:String) {
 }
 
 @Composable
-fun H2(displayText:String) {
+fun SDUI_H2(h2: H2) {
     SDUICustomStyledText(
-        displayText = displayText,
+        displayText = h2.parameterTypes?.text?.description.toString(),
         style = TextStyle(
             color = PactColor.H2,
             fontSize = PactDimens.H2,
@@ -60,9 +60,9 @@ fun H2(displayText:String) {
 }
 
 @Composable
-fun H3(displayText:String) {
+fun SDUI_H3(h3: H3) {
     SDUICustomStyledText(
-        displayText = displayText,
+        displayText = h3.parameterTypes?.text?.description.toString(),
         style = TextStyle(
             color = PactColor.H3,
             fontSize = PactDimens.H3,

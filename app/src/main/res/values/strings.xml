@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Jetpack Compose Playground</string>
+    <string name="app_name">Jetpack Compose SDUI</string>
     <string name="title_activity_compose">Simple Text Example</string>
     <string name="title_activity_custom_text">Custom Text Example</string>
     <string name="title_activity_list">Vertical Scrollable Examples</string>
