@@ -3,26 +3,20 @@ package com.example.jetpackcompose.sdui
 import java.io.Serializable
 
 data class SDUIBean(
+        val name: String,
         val componentGroups: List<ComponentGroup>,
-        val name: String
 ) : Serializable
 
 data class ComponentGroup(
+        val name: String,
         val components: List<Component>,
-        val name: String
 ) : Serializable
 
 data class Component(
-        val entitySideEffects: List<EntitySideEffect>,
         val name: String,
+        val type: String,
         val parameters: Parameters,
-        val type: String
-) : Serializable
-
-data class EntitySideEffect(
-        val entity: String,
-        val idType: String,
-        val verb: String
+        val entitySideEffects: List<EntitySideEffect>,
 ) : Serializable
 
 data class Parameters(
@@ -31,4 +25,10 @@ data class Parameters(
         val text: String,
         val title: String,
         val upperText: String
+) : Serializable
+
+data class EntitySideEffect(
+        val entity: String,
+        val idType: String,
+        val verb: String
 ) : Serializable
